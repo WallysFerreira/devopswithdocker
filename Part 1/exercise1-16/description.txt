@@ -1,0 +1,1 @@
+I had to search a little bit about how to deploy a docker image to render.com, and found that one way is to add a Dockerfile to the directory. So I created a Dockerfile using the official node image as base, exposed the port used by the application, installed the dependencies with npm, and then ran the application.
