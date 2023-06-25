@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:13.2-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: example
+    container_name: postgresdb
+  backend:
+    build: ./example-backend
+    environment:
+      - POSTGRES_HOST=db
+      - POSTGRES_PASSWORD=example
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+  frontend:
+    build: ./example-frontend
+    ports:
+      - 5000:5000
+    depends_on:
+      - db
+      - backend
+
