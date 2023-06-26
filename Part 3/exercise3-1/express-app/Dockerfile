@@ -1,7 +1,6 @@
 FROM node:16
-WORKDIR /myapp
 
-COPY ./Part\ 3/exercise3-1/express-app .
+COPY . .
 
 RUN npm install
 
