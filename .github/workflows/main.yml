@@ -15,10 +15,9 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
-    - name: Change Directory
+    - name: Check directory
       run: |
-        ls /var
-        cd Part\ 3/exercise3-1/express-app
+        ls /var/lib/docker/tmp/
     - name: Build and Push
       uses: docker/build-push-action@v4.1.1
       with:
