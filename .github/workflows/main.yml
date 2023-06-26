@@ -1,0 +1,22 @@
+name: Push to DockerHub
+
+on:
+  push:
+    branches:
+      - main
+      
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: DockerHub Login
+      uses: docker/login-action@v2.2.0
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_PASSWORD }}
+    - name: Build and Push
+      uses: docker/build-push-action@v4.1.1
+      with:
+        push: true
+        tags: wallysf/express-app:latest
