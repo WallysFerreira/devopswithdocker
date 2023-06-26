@@ -17,8 +17,8 @@ jobs:
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
     - name: Change Directory
       run: |
+        ls /var
         cd Part\ 3/exercise3-1/express-app
-        ls
     - name: Build and Push
       uses: docker/build-push-action@v4.1.1
       with:
