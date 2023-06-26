@@ -18,6 +18,7 @@ jobs:
     - name: Change Directory
       run: |
         cd Part\ 3/exercise3-1/express-app
+        ls
     - name: Build and Push
       uses: docker/build-push-action@v4.1.1
       with:
