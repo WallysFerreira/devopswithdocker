@@ -4,7 +4,7 @@ COPY . .
 
 RUN ./mvnw package
 
-FROM amazoncorretto:8
+FROM amazoncorretto:8-alpine-jre
 EXPOSE 8080
 
 COPY --from=builder /target .
