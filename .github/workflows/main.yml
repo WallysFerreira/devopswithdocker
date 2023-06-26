@@ -20,4 +20,4 @@ jobs:
       with:
         push: true
         tags: wallysf/express-app:latest
-        file: ./devopswithdocker/Part\ 3/exercise3-1/express-app/Dockerfile
+        file: ./Part\ 3/exercise3-1/express-app/Dockerfile
